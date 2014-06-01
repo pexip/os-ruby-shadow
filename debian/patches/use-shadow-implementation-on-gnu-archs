@@ -1,0 +1,19 @@
+Description: use the shadow implementation on gnu systems
+ Let extconf knows that it can use the shadow functions, just like on Linux,
+ on Debian archs like kFreeBSD and Hurd.
+
+Bug-Debian: http://bugs.debian.org/749904
+Reviewed-By: David Suárez <david.sephirot@gmail.com>
+Author: Samuel Thibault <sthibault@debian.org>
+Last-Update: 2014-06-01
+
+--- ruby-shadow-2.3.4.orig/extconf.rb
++++ ruby-shadow-2.3.4/extconf.rb
+@@ -15,6 +15,7 @@ $CFLAGS += case RUBY_VERSION
+ 
+ implementation = case CONFIG['host_os']
+                  when /linux/i; 'shadow'
++                 when /gnu/i; 'shadow' # Debian GNU/kFreeBSD and Hurd have shadow.h
+                  when /sunos|solaris/i; 'shadow'
+                  when /freebsd|mirbsd|netbsd|openbsd/i; 'pwd'
+                  when /darwin/i; 'pwd'

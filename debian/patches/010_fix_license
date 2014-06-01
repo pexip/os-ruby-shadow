@@ -1,0 +1,34 @@
+Description: Fix license problems
+ Fix the LICENSE and README's files to reflect upstream's
+ choice for a license.
+
+--- a/LICENSE
++++ b/LICENSE
+@@ -1,5 +1 @@
+-License: Free for any use with your own risk!
+-
+-OR
+-
+ The terms of the Public Domain License (http://creativecommons.org/licenses/publicdomain/)
+--- a/README.euc
++++ b/README.euc
+@@ -2,7 +2,7 @@ Shadow Password module
+ 
+ Copyright (C) 1998-1999 Takaaki Tateishi <ttate@jaist.ac.jp>
+ Modified at: <1999/8/19 06:48:01 by ttate>
+-License: Free for any use with your own risk!
++License: See LICENSE
+ 
+ 
+ 1. ³µÍ×
+--- a/shadow/shadow.c
++++ b/shadow/shadow.c
+@@ -4,7 +4,7 @@
+  * Ruby extention module for using Linux shadow password.
+  *
+  * Copyright (C) 1998-1999 by Takaaki.Tateishi(ttate@jaist.ac.jp)
+- * License: Free for any use with your own risk!
++ * License: See LICENSE
+  */
+ 
+ #include <shadow.h>

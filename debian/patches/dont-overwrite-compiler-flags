@@ -1,0 +1,31 @@
+Description: Don't overwrite CFLAGS|LDFLAGS
+ It seems that the current extconf.rb overwrites the CFLAGS/LDFLAGS.
+
+Author: Cédric Boutillier <boutil@debian.org>
+Author: David Suárez <david.sephirot@gmail.com>
+Last-Update: 2013-10-26
+
+--- a/extconf.rb
++++ b/extconf.rb
+@@ -7,9 +7,9 @@
+ require 'mkmf'
+ require 'rbconfig'
+ 
+-$CFLAGS = case RUBY_VERSION
+-          when /^1\.9/; '-DRUBY19'
+-          when /^2\./; '-DRUBY19'
++$CFLAGS += case RUBY_VERSION
++          when /^1\.9/; ' -DRUBY19'
++          when /^2\./; ' -DRUBY19'
+           else; ''
+           end
+ 
+@@ -29,7 +29,7 @@ when 'shadow'
+   #$LDFLAGS = "-lshadow"
+ 
+   if( ! (ok &= have_library("shadow","getspent")) )
+-    $LDFLAGS = ""
++    #$LDFLAGS = ""
+     ok = have_func("getspent")
+   end
+ 

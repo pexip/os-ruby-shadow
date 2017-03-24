@@ -1,14 +1,16 @@
 Source: ruby-shadow
 Section: ruby
 Priority: extra
-Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
-Uploaders: akira yamada <akira@debian.org>, Taku YASUI <tach@debian.org>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
+XSBC-Pexip-Original-Uploaders: akira yamada <akira@debian.org>, Taku YASUI <tach@debian.org>
 Build-Depends: debhelper (>= 8), gem2deb (>= 0.2.13~)
 Standards-Version: 3.9.5
 Vcs-Git: git://anonscm.debian.org/pkg-ruby-extras/ruby-shadow.git
 Vcs-Browser: http://anonscm.debian.org/gitweb?p=pkg-ruby-extras/ruby-shadow.git;a=summary
 Homepage: https://github.com/apalmblad/ruby-shadow
 XS-Ruby-Versions: all
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
 
 Package: ruby-shadow
 Architecture: any

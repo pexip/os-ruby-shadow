@@ -1,0 +1,62 @@
+--- !ruby/object:Gem::Specification
+name: ruby-shadow
+version: !ruby/object:Gem::Version
+  version: 2.3.4
+platform: ruby
+authors:
+- Adam Palmblad
+- Eric Hankins
+- Ian Marlier
+- Jeff Blaine
+- Remi Broemeling
+- Takaaki Tateishi
+autorequire: 
+bindir: bin
+cert_chain: []
+date: 2014-04-28 00:00:00.000000000 Z
+dependencies: []
+description: This module provides access to shadow passwords on Linux, OSX, FreeBSD,
+  OpenBSD, and Solaris
+email:
+- adam.palmblad@teampages.com
+executables: []
+extensions:
+- extconf.rb
+extra_rdoc_files: []
+files:
+- HISTORY
+- LICENSE
+- MANIFEST
+- README
+- README.euc
+- extconf.rb
+- pwd/depend
+- pwd/shadow.c
+- ruby-shadow.gemspec
+- shadow/depend
+- shadow/shadow.c
+homepage: https://github.com/apalmblad/ruby-shadow
+licenses:
+- Public Domain License
+metadata: {}
+post_install_message: 
+rdoc_options: []
+require_paths:
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement
+  requirements:
+  - - ">="
+    - !ruby/object:Gem::Version
+      version: '1.8'
+required_rubygems_version: !ruby/object:Gem::Requirement
+  requirements:
+  - - ">="
+    - !ruby/object:Gem::Version
+      version: '0'
+requirements: []
+rubyforge_project: 
+rubygems_version: 2.2.1
+signing_key: 
+specification_version: 4
+summary: "*nix Shadow Password Module"
+test_files: []

@@ -1,3 +1,23 @@
+ruby-shadow (2.5.0-1) unstable; urgency=medium
+
+  * Team upload.
+
+  [ Cédric Boutillier ]
+  * Remove version in the gem2deb build-dependency
+  * Use https:// in Vcs-* fields
+  * Use https:// in Vcs-* fields
+  * Bump Standards-Version to 3.9.7 (no changes needed)
+  * Run wrap-and-sort on packaging files
+
+  [ Lucas Kanashiro ]
+  * New upstream version 2.5.0 (Closes: #889026)
+  * Bump debhelper compatibility level to 10
+  * Declare compliance with Debian Policy 4.1.3
+  * d/control: fix typo in description
+  * d/control: change priority to optiona, extra is deprecated
+
+ -- Lucas Kanashiro <kanashiro@debian.org>  Sat, 03 Feb 2018 13:54:50 -0200
+
 ruby-shadow (2.4.1-1) unstable; urgency=medium
 
   * Team upload.

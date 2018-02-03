@@ -1,12 +1,14 @@
 Source: ruby-shadow
 Section: ruby
-Priority: extra
+Priority: optional
 Maintainer: Debian Ruby Extras Maintainers <pkg-ruby-extras-maintainers@lists.alioth.debian.org>
-Uploaders: akira yamada <akira@debian.org>, Taku YASUI <tach@debian.org>
-Build-Depends: debhelper (>= 9), gem2deb (>= 0.2.13~)
-Standards-Version: 3.9.6
-Vcs-Git: git://anonscm.debian.org/pkg-ruby-extras/ruby-shadow.git
-Vcs-Browser: http://anonscm.debian.org/gitweb?p=pkg-ruby-extras/ruby-shadow.git;a=summary
+Uploaders: akira yamada <akira@debian.org>,
+           Taku YASUI <tach@debian.org>
+Build-Depends: debhelper (>= 10),
+               gem2deb
+Standards-Version: 4.1.3
+Vcs-Git: https://anonscm.debian.org/git/pkg-ruby-extras/ruby-shadow.git
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-ruby-extras/ruby-shadow.git
 Homepage: https://github.com/apalmblad/ruby-shadow
 XS-Ruby-Versions: all
 Testsuite: autopkgtest-pkg-ruby
@@ -14,8 +16,9 @@ Testsuite: autopkgtest-pkg-ruby
 Package: ruby-shadow
 Architecture: any
 XB-Ruby-Versions: ${ruby:Versions}
-Depends: ${shlibs:Depends}, ${misc:Depends}
+Depends: ${misc:Depends},
+         ${shlibs:Depends}
 Description: interface of shadow password for Ruby
  This is a module which is used when you want to access shadow password files
- from the Ruby programing language. It gives access to the same C level
+ from the Ruby programming language. It gives access to the same C level
  functions provided by the shadow password API.

@@ -44,6 +44,7 @@ static VALUE convert_pw_struct( struct spwd *entry )
                       Qnil, /* used by BSD, pw_change, date when the password expires, in days since Jan 1, 1970 */
 		      INT2FIX(entry->sp_expire),
 		      INT2FIX(entry->sp_flag),
+		      Qnil,
 		      NULL);
 };
 static VALUE
@@ -243,7 +244,9 @@ Init_shadow()
   rb_sPasswdEntry = rb_struct_define("PasswdEntry",
 				     "sp_namp","sp_pwdp","sp_lstchg",
 				     "sp_min","sp_max","sp_warn",
-				     "sp_inact", "pw_change", "sp_expire","sp_flag", NULL);
+				     "sp_inact", "pw_change",
+				     "sp_expire","sp_flag",
+				     "sp_loginclass", NULL);
   rb_sGroupEntry = rb_struct_define("GroupEntry",
 				    "sg_name","sg_passwd",
 				    "sg_adm","sg_mem",NULL);

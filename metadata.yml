@@ -1,7 +1,7 @@
 --- !ruby/object:Gem::Specification
 name: ruby-shadow
 version: !ruby/object:Gem::Version
-  version: 2.3.4
+  version: 2.4.1
 platform: ruby
 authors:
 - Adam Palmblad
@@ -13,7 +13,7 @@ authors:
 autorequire: 
 bindir: bin
 cert_chain: []
-date: 2014-04-28 00:00:00.000000000 Z
+date: 2014-12-02 00:00:00.000000000 Z
 dependencies: []
 description: This module provides access to shadow passwords on Linux, OSX, FreeBSD,
   OpenBSD, and Solaris
@@ -55,7 +55,7 @@ required_rubygems_version: !ruby/object:Gem::Requirement
       version: '0'
 requirements: []
 rubyforge_project: 
-rubygems_version: 2.2.1
+rubygems_version: 2.4.2
 signing_key: 
 specification_version: 4
 summary: "*nix Shadow Password Module"

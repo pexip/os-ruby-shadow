@@ -1,6 +1,13 @@
+[2014/12/02]
+* Version 2.4.1
+  - sp_loginclass support should NOT have been added to password implementation
+[2014/12/01]
+* Version 2.4.0
+  - Add support for sp_loginclass via pwd.h
 [2014/04/28]
-  * Added support for more BSDs, thanks to https://github.com/bsiegert.
-  * Simplified compatibility check, removing check for function not actually used in pwd.h implementations.
+* Version 2.3.3
+  - Added support for more BSDs, thanks to https://github.com/bsiegert.
+  - Simplified compatibility check, removing check for function not actually used in pwd.h implementations.
 [2014/02/25]
 [2013/12/18]
 * Version 2.3.3

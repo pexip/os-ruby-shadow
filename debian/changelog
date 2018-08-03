@@ -1,4 +1,4 @@
-ruby-shadow (2.4.1-1pexip1) pexip; urgency=medium
+ruby-shadow (2.4.1-1+b3pexip1) pexip; urgency=medium
 
   * Migrate to Stretch
 

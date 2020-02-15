@@ -115,6 +115,7 @@ Init_shadow()
                                     "sg_adm","sg_mem",NULL);
 
   rb_mShadow = rb_define_module("Shadow");
+  rb_define_const( rb_mShadow, "IMPLEMENTATION", rb_str_new_cstr( "PWD" ) );
   rb_eFileLock = rb_define_class_under(rb_mShadow,"FileLock",rb_eException);
   rb_mPasswd = rb_define_module_under(rb_mShadow,"Passwd");
   rb_define_const(rb_mPasswd,"Entry",rb_sPasswdEntry);
@@ -125,4 +126,5 @@ Init_shadow()
   rb_define_module_function(rb_mPasswd,"endspent",rb_shadow_endspent,0);
   rb_define_module_function(rb_mPasswd,"getspent",rb_shadow_getspent,0);
   rb_define_module_function(rb_mPasswd,"getspnam",rb_shadow_getspnam,1);
+  rb_define_module_function(rb_mPasswd,"from_user_name",rb_shadow_getspnam,1);
 }

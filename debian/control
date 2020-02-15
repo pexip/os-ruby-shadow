@@ -11,7 +11,7 @@ Vcs-Browser: http://anonscm.debian.org/gitweb?p=pkg-ruby-extras/ruby-shadow.git;
 Homepage: https://github.com/apalmblad/ruby-shadow
 XS-Ruby-Versions: all
 Testsuite: autopkgtest-pkg-ruby
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ buster
 
 Package: ruby-shadow
 Architecture: any

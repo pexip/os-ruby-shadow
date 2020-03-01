@@ -144,21 +144,27 @@ rb_shadow_putspent(VALUE self, VALUE entry, VALUE file)
 
   if( TYPE(file) != T_FILE )
     rb_raise(rb_eTypeError,"argument must be a File.");
-
+    /*
   for(i=0; i<NUM_FIELDS; i++)
-    val[i] = RSTRUCT_PTR( entry )[i]; //val[i] = RSTRUCT(entry)->ptr[i];
+  {
+    val[i] = rb_ary_entry( entry, i ); //val[i] = RSTRUCT(entry)->ptr[i];
+    i//val[i] = rb_struct_aref( entry, i );
+  }
+  */
   cfile = file_ptr( RFILE(file)->fptr );
 
-
-  centry.sp_namp = StringValuePtr(val[0]);
-  centry.sp_pwdp = StringValuePtr(val[1]);
-  centry.sp_lstchg = FIX2INT(val[2]);
-  centry.sp_min = FIX2INT(val[3]);
-  centry.sp_max = FIX2INT(val[4]);
-  centry.sp_warn = FIX2INT(val[5]);
-  centry.sp_inact = FIX2INT(val[6]);
-  centry.sp_expire = FIX2INT(val[8]);
-  centry.sp_flag = FIX2INT(val[9]);
+  VALUE x = rb_ary_entry( entry, 0 );
+  centry.sp_namp = StringValuePtr( x );
+  x = rb_ary_entry( entry, 1 );
+  centry.sp_pwdp = StringValuePtr( x );
+  centry.sp_lstchg = FIX2INT( rb_ary_entry( entry, 2) );
+  centry.sp_min = FIX2INT( rb_ary_entry( entry, 3 ) );
+  centry.sp_max = FIX2INT( rb_ary_entry( entry, 4 ) );
+  centry.sp_warn = FIX2INT( rb_ary_entry( entry, 5 ));
+  centry.sp_inact = FIX2INT( rb_ary_entry( entry, 6 ) );
+  // missing 7 I think is put in to deal with beign similar to BSD returns, for the value pw_change.
+  centry.sp_expire = FIX2INT( rb_ary_entry( entry, 8 ) );
+  centry.sp_flag = FIX2INT( rb_ary_entry( entry, 9 ) );
 
   result = putspent(&centry,cfile);
 
@@ -252,6 +258,7 @@ Init_shadow()
 				    "sg_adm","sg_mem",NULL);
 
   rb_mShadow = rb_define_module("Shadow");
+  rb_define_const( rb_mShadow, "IMPLEMENTATION", rb_str_new_cstr( "SHADOW" ) );
   rb_eFileLock = rb_define_class_under(rb_mShadow,"FileLock",rb_eException);
   rb_mPasswd = rb_define_module_under(rb_mShadow,"Passwd");
   rb_define_const(rb_mPasswd,"Entry",rb_sPasswdEntry);
@@ -266,7 +273,9 @@ Init_shadow()
   rb_define_module_function(rb_mPasswd,"fgetspent",rb_shadow_fgetspent,1);
   rb_define_module_function(rb_mPasswd,"getspent",rb_shadow_getspent,0);
   rb_define_module_function(rb_mPasswd,"getspnam",rb_shadow_getspnam,1);
+  rb_define_module_function(rb_mPasswd,"from_user_name",rb_shadow_getspnam,1);
   rb_define_module_function(rb_mPasswd,"putspent",rb_shadow_putspent,2);
+  rb_define_module_function(rb_mPasswd,"add_password_entry",rb_shadow_putspent,2);
   rb_define_module_function(rb_mPasswd,"lckpwdf",rb_shadow_lckpwdf,0);
   rb_define_module_function(rb_mPasswd,"lock",rb_shadow_lock,0);
   rb_define_module_function(rb_mPasswd,"ulckpwdf",rb_shadow_ulckpwdf,0);

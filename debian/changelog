@@ -1,4 +1,4 @@
-ruby-shadow (2.5.0-1pexip1) pexip; urgency=medium
+ruby-shadow (2.5.0-1+b1pexip1) pexip; urgency=medium
 
   * Migrate to Buster
 
